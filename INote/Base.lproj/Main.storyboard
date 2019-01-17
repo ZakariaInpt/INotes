@@ -32,7 +32,14 @@
                             <outlet property="delegate" destination="0cz-ds-nmP" id="6m6-oS-6EI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="INote" id="TM0-2N-3hj"/>
+                    <navigationItem key="navigationItem" title="INote" id="TM0-2N-3hj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tvv-eO-bhn">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addNewItem:" destination="0cz-ds-nmP" id="TiC-hh-Wr1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YC0-M8-YbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
