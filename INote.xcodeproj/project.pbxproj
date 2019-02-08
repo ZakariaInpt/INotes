@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6351100A6C972B1651EAF5FF /* Pods_INote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129D8D8AC6E524568695D0CC /* Pods_INote.framework */; };
 		CE3B6D5F21EE983000FE1316 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B6D5E21EE983000FE1316 /* AppDelegate.swift */; };
 		CE3B6D6121EE983000FE1316 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B6D6021EE983000FE1316 /* ToDoListViewController.swift */; };
 		CE3B6D6421EE983000FE1316 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3B6D6221EE983000FE1316 /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		129D8D8AC6E524568695D0CC /* Pods_INote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23608990628AFBD7241B057C /* Pods-INote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INote.release.xcconfig"; path = "Pods/Target Support Files/Pods-INote/Pods-INote.release.xcconfig"; sourceTree = "<group>"; };
+		5F562666A42446982666E4F3 /* Pods-INote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-INote/Pods-INote.debug.xcconfig"; sourceTree = "<group>"; };
 		CE3B6D5B21EE983000FE1316 /* INote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3B6D5E21EE983000FE1316 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE3B6D6021EE983000FE1316 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6351100A6C972B1651EAF5FF /* Pods_INote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E79561B0290B55854F07B24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F562666A42446982666E4F3 /* Pods-INote.debug.xcconfig */,
+				23608990628AFBD7241B057C /* Pods-INote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69B3216ED7449307AD50093A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				129D8D8AC6E524568695D0CC /* Pods_INote.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE3B6D5221EE982F00FE1316 = {
 			isa = PBXGroup;
 			children = (
 				CE3B6D5D21EE983000FE1316 /* INote */,
 				CE3B6D5C21EE983000FE1316 /* Products */,
+				0E79561B0290B55854F07B24 /* Pods */,
+				69B3216ED7449307AD50093A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE3B6D6D21EE983300FE1316 /* Build configuration list for PBXNativeTarget "INote" */;
 			buildPhases = (
+				524ECEE3382B7FC1154A2397 /* [CP] Check Pods Manifest.lock */,
 				CE3B6D5721EE983000FE1316 /* Sources */,
 				CE3B6D5821EE983000FE1316 /* Frameworks */,
 				CE3B6D5921EE983000FE1316 /* Resources */,
+				57C0BCC52A49C13044B9F3C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +193,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		524ECEE3382B7FC1154A2397 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-INote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57C0BCC52A49C13044B9F3C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-INote/Pods-INote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-INote/Pods-INote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE3B6D5721EE983000FE1316 /* Sources */ = {
@@ -320,6 +395,7 @@
 		};
 		CE3B6D6E21EE983300FE1316 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F562666A42446982666E4F3 /* Pods-INote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +414,7 @@
 		};
 		CE3B6D6F21EE983300FE1316 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23608990628AFBD7241B057C /* Pods-INote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
